@@ -32,3 +32,7 @@ Template.registerHelper('compare', function (first, second) {
     return first === second;
   }
 });
+
+Template.registerHelper('count', function (first) {
+  return first.count();
+});
