@@ -33,7 +33,14 @@ Template.registerHelper('compare', function (first, second) {
   }
 });
 
-// TODO: take "length" from MedBook-Wrangler
-Template.registerHelper('count', function (first) {
-  return first.count();
+Template.registerHelper('length', function (first) {
+  if (first.count) {
+    return first.count();
+  }
+
+  if (first.length !== undefined) {
+    return first.length;
+  }
+
+  console.log("length could not be calculated for", first);
 });
