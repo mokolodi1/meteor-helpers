@@ -1,6 +1,6 @@
 Package.describe({
   name: 'mokolodi1:helpers',
-  version: '0.0.2',
+  version: '0.0.3',
   // Brief, one-line summary of the package.
   summary: 'General template and code helpers',
   // URL to the Git repository containing the source code for this package.
@@ -17,7 +17,10 @@ Package.onUse(function(api) {
 
   api.export("Template", 'client');
 
-  api.addFiles('helpers.js', 'client');
+  api.addFiles('client.js', 'client');
+
+  api.addFiles('server.js', 'server');
+  api.export("Moko", "server");
 });
 
 Package.onTest(function(api) {

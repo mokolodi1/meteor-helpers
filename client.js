@@ -33,6 +33,7 @@ Template.registerHelper('compare', function (first, second) {
   }
 });
 
+// TODO: take "length" from MedBook-Wrangler
 Template.registerHelper('count', function (first) {
   return first.count();
 });
