@@ -36,6 +36,7 @@ Template.registerHelper('compare', function (first, second) {
 Template.registerHelper('length', function (first) {
   if (!first) {
     console.log("Could not calculate length of", first);
+    return;
   }
 
   if (first.count) {
