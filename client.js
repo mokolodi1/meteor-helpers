@@ -34,6 +34,10 @@ Template.registerHelper('compare', function (first, second) {
 });
 
 Template.registerHelper('length', function (first) {
+  if (!first) {
+    console.log("Could not calculate length of", first);
+  }
+
   if (first.count) {
     return first.count();
   }
@@ -42,5 +46,5 @@ Template.registerHelper('length', function (first) {
     return first.length;
   }
 
-  console.log("length could not be calculated for", first);
+  console.log("Could not calculate length of", first);
 });
