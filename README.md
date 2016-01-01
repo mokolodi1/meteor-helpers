@@ -33,3 +33,11 @@ Supported helpers include `compare`, `print`, and `length`. Print calls `console
 ## Server helpers
 
 `Moko.ensureIndex` adds an index to a collection. See the [mongodb docs](https://docs.mongodb.org/manual/reference/method/db.collection.ensureIndex/) for more information. If there is an exception creating the index, it will be thrown.
+
+Example:
+```js
+Moko.ensureIndex(CollectionName, {
+  field: -1,
+  otherField: 1,
+});
+```
