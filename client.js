@@ -2,26 +2,15 @@ function onlyHash (obj) {
   return JSON.stringify(obj.hash) === '{}';
 }
 
-Template.registerHelper("print", function (first, second, third) {
-  console.log("first, second, third:", first, second, third);
-  if (first === undefined) {
+Template.registerHelper("print", function (first, second, third, fourth) {
+  if (first === undefined || second === undefined) {
     console.log("No arguments given to global print helper :(");
-  } else if (second === undefined) {
-    if (onlyHash(third)) {
-      console.log(first, second);
-    } else {
-      console.log(first);
-    }
   } else if (third === undefined) {
-    if (onlyHash(second)) {
-      console.log(first);
-    } else {
-      console.log(first, second);
-    }
-  } else if (onlyHash(third)) {
+    console.log(first);
+  } else if (fourth === undefined) {
     console.log(first, second);
   } else {
-    console.log("current print helper only does 2 arguments...");
+    console.log("the current print helper only does 2 arguments...");
   }
 });
 
