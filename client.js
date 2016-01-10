@@ -1,5 +1,5 @@
 function onlyHash (obj) {
-  return JSON.stringify(obj.hash) === '{}';
+  return JSON.stringify(obj.hash) === "{}";
 }
 
 Template.registerHelper("print", function (first, second, third, fourth) {
@@ -14,15 +14,15 @@ Template.registerHelper("print", function (first, second, third, fourth) {
   }
 });
 
-Template.registerHelper('compare', function (first, second) {
-  if (typeof first === 'object' && typeof second === 'object') {
+Template.registerHelper("compare", function (first, second) {
+  if (typeof first === "object" && typeof second === "object") {
     return _.isEqual(first, second); // do a object comparison
   } else {
     return first === second;
   }
 });
 
-Template.registerHelper('length', function (first) {
+Template.registerHelper("length", function (first) {
   if (!first) {
     console.log("Could not calculate length of", first);
     return;
@@ -37,4 +37,8 @@ Template.registerHelper('length', function (first) {
   }
 
   console.log("Could not calculate length of", first);
+});
+
+Template.registerHelper("fromNow", function (date) {
+  return moment(date).fromNow();
 });
