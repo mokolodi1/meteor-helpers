@@ -22,6 +22,10 @@ Template.registerHelper("compare", function (first, second) {
   }
 });
 
+Template.registerHelper("isUndefined", function (thing) {
+  return thing === undefined;
+});
+
 Template.registerHelper("length", function (first) {
   if (!first) {
     console.log("Could not calculate length of", first);
