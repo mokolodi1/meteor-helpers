@@ -28,7 +28,6 @@ Template.registerHelper("isUndefined", function (thing) {
 
 Template.registerHelper("length", function (first) {
   if (!first) {
-    console.log("Could not calculate length of", first);
     return;
   }
 
@@ -40,9 +39,19 @@ Template.registerHelper("length", function (first) {
     return first.length;
   }
 
-  console.log("Could not calculate length of", first);
+   // can't find length :(
 });
 
+Template.registerHelper("getInstanceReactive", function (varName) {
+  var variable = Template.instance()[varName];
+  if (variable && variable.get) {
+    return variable.get();
+  }
+
+  throw "Couldn't get reactive instance variable " + varName;
+});
+
+// TODO: make reactive, update ever minute or so
 Template.registerHelper("fromNow", function (date) {
   return moment(date).fromNow();
 });
