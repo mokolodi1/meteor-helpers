@@ -55,3 +55,7 @@ Template.registerHelper("getInstanceReactive", function (varName) {
 Template.registerHelper("fromNow", function (date) {
   return moment(date).fromNow();
 });
+
+Template.registerHelper("getSession", function (sessionVarName) {
+  return Session.get(sessionVarName);
+});
