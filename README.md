@@ -5,7 +5,7 @@ This package contains a set of helper functions that make using Meteor easier. F
 ## Installation
 
 ```
-$ meteor add aldeed:simple-schema
+$ meteor add mokolodi1:meteor-helpers
 ```
 
 ## Blaze helpers
