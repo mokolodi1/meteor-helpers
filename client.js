@@ -1,7 +1,3 @@
-function onlyHash (obj) {
-  return JSON.stringify(obj.hash) === "{}";
-}
-
 Template.registerHelper("print", function (first, second, third, fourth) {
   if (first === undefined || second === undefined) {
     console.log("No arguments given to global print helper :(");
@@ -51,11 +47,37 @@ Template.registerHelper("getInstanceReactive", function (varName) {
   throw "Couldn't get reactive instance variable " + varName;
 });
 
-// TODO: make reactive, update ever minute or so
-Template.registerHelper("fromNow", function (date) {
-  return moment(date).fromNow();
+// update every 10 seconds
+setInterval(function() {
+  Session.set("mokolodi1-helpers-momentjs-tick", new Date())
+}, 10 * 1000);
+
+Template.registerHelper("fromNow", function (time) {
+  Session.get("mokolodi1-helpers-momentjs-tick");
+
+  return moment(time).fromNow();
 });
 
 Template.registerHelper("getSession", function (sessionVarName) {
   return Session.get(sessionVarName);
+});
+
+Template.registerHelper("or", function (first, second) {
+  return first || second;
+});
+
+Template.registerHelper("and", function (first, second) {
+  return first && second;
+});
+
+Template.registerHelper("ne", function (first, second) {
+  return first !== second;
+});
+
+Template.registerHelper("neither", function (first, second) {
+  return !first && !second;
+});
+
+Template.registerHelper("getReactive", function (variable) {
+  return variable.get();
 });

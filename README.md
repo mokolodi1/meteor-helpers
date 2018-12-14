@@ -10,7 +10,22 @@ $ meteor add mokolodi1:meteor-helpers
 
 ## Blaze helpers
 
-Supported helpers include `compare`, `print`, and `length`. Print calls `console.log` with the provided arguments. `Compare` and `length` do exactly what they sound like they do.
+| Helper                | Description |
+| --------------------- | ----------- |
+| `or`                  | OR of first two arguments |
+| `and`                 | AND of first two arguments |
+| `compare`             | Compares with `===` |
+| `ne`                  | Compares with `!==` |
+| `neither`             | True if neither argument is truthy |
+| `isUndefined`         | Checks with `===` against `undefined` |
+| `print`               | Calls `console.log` |
+| `fromNow`             | Moment.js's `fromNow`, updates every 10 seconds |
+| `length`              | Returns length of arrays and Mongo cursors |
+| `getSession`          | Session.get() |
+| `getReactive`         | Calls `.get()` on reactive variable in params |
+| `getInstanceReactive` | Calls `.get()` on reactive variable in the current Template instance |
+
+### Examples
 
 ```html
 <p>
