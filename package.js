@@ -1,10 +1,10 @@
 Package.describe({
   name: "mokolodi1:helpers",
-  version: "0.0.11",
+  version: "0.0.12",
   // Brief, one-line summary of the package.
   summary: "General template and code helpers",
   // URL to the Git repository containing the source code for this package.
-  git: "",
+  git: "https://github.com/mokolodi1/meteor-helpers",
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: "README.md"
