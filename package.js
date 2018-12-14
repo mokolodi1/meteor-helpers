@@ -1,6 +1,6 @@
 Package.describe({
   name: "mokolodi1:helpers",
-  version: "0.0.12",
+  version: "0.0.13",
   // Brief, one-line summary of the package.
   summary: "General template and code helpers",
   // URL to the Git repository containing the source code for this package.
@@ -14,8 +14,10 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3');
 
   api.use("templating", "client");
+  api.use("session", "client");
   api.use("momentjs:moment@2.10.6");
   api.export("Template", "client");
+  api.export("Session", "client");
 
   api.addFiles("client.js", "client");
 
