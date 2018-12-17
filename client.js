@@ -47,6 +47,15 @@ Template.registerHelper("getInstanceReactive", function (varName) {
   throw "Couldn't get reactive instance variable " + varName;
 });
 
+Template.registerHelper("getInstanceVar", function (varName) {
+  var variable = Template.instance()[varName];
+  if (variable) {
+    return variable;
+  }
+
+  throw "Couldn't get instance variable " + varName;
+});
+
 // update every 10 seconds
 setInterval(function() {
   Session.set("mokolodi1-helpers-momentjs-tick", new Date())

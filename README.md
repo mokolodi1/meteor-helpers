@@ -24,6 +24,7 @@ $ meteor add mokolodi1:meteor-helpers
 | `getSession`          | Session.get() |
 | `getReactive`         | Calls `.get()` on reactive variable in params |
 | `getInstanceReactive` | Calls `.get()` on reactive variable in the current Template instance |
+| `getInstanceVar`      | Returns the specified variable attached to `Template.instance()`. Useful for passing a ReactiveVar to a child template. |
 
 ### Examples
 
@@ -42,6 +43,10 @@ $ meteor add mokolodi1:meteor-helpers
   {{#if length arrayField}}
     arrayField has at least one element.
   {{/if}}
+</p>
+
+<p>
+  There are {{getInstanceReactive "counter"}} apple pies.
 </p>
 ```
 
