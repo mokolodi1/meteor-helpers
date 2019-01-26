@@ -71,6 +71,10 @@ Template.registerHelper("getSession", function (sessionVarName) {
   return Session.get(sessionVarName);
 });
 
+Template.registerHelper("not", function (thing) {
+  return !!!thing;
+});
+
 Template.registerHelper("or", function (first, second) {
   return first || second;
 });

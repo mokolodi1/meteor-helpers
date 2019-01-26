@@ -12,6 +12,7 @@ $ meteor add mokolodi1:meteor-helpers
 
 | Helper                | Description |
 | --------------------- | ----------- |
+| `not`                 | NOT of the first argument |
 | `or`                  | OR of first two arguments |
 | `and`                 | AND of first two arguments |
 | `compare`             | Compares with `===` |
